@@ -1,6 +1,6 @@
 [project]
 name = "korean_news_scraper"
-version = "0.1.1"
+version = "0.1.2"
 authors = [
   { name="kimminsum", email="tommy1005a@gmail.com" },
 ]

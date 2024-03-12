@@ -4,3 +4,7 @@
 # train data format
 *.json
 *.csv
+
+# ignore build files
+/dist/
+/korean_news_scraper.egg-info/
