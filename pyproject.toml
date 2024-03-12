@@ -1,8 +1,8 @@
 [project]
-name = "python_news_scraper"
-version = "1.2.0"
+name = "news_scraper"
+version = "0.0.1"
 authors = [
-  { name="Morgan Barber", email="morganbarber928@gmail.com" },
+  { name="kar7mp5", email="tommy1005a@gmail.com" },
 ]
 description = "A python package for web scraping news articles"
 readme = "README.md"
@@ -14,4 +14,4 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/morganbarber/python-news-scraper"
+Homepage = "https://github.com/kimminsum/news-scraper.git"
