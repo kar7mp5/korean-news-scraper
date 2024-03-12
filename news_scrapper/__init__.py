@@ -1,0 +1,1 @@
+from python_news_scrapper import googleNewsScraper

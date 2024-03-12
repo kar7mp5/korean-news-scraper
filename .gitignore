@@ -1,0 +1,6 @@
+# virtual environment
+/venv/
+
+# train data format
+*.json
+*.csv
