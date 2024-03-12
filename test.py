@@ -1,3 +1,3 @@
-import news_scraper
+import korean_news_scraper
 
-news_scraper.googleNewsScraper()
+korean_news_scraper.googleNewsScraper()

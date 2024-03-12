@@ -1,11 +1,11 @@
 [project]
-name = "news_scraper"
-version = "0.0.1"
+name = "korean_news_scraper"
+version = "0.1.1"
 authors = [
   { name="kimminsum", email="tommy1005a@gmail.com" },
 ]
-description = "A python package for web scraping news articles"
-readme = "ReadME.md"
+description = "A python package for web scraping korean news articles"
+readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -14,4 +14,5 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/kimminsum/news-scraper.git"
+Homepage = "https://github.com/kimminsum/korean-news-scraper"
+Issues = "https://github.com/kimminsum/korean-news-scraper/issues"

@@ -15,7 +15,7 @@ def scrollDownPage(url: str) -> None:
         raise ValueError("Invaild URL")
 
 
-    #This code will scroll down to the end
+    #This code will scroll down to the ends
     while True:
         try:
             # Action scroll down

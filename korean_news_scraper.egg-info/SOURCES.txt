@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+korean_news_scraper/__init__.py
+korean_news_scraper/getArticleLinks.py
+korean_news_scraper/google_news_scraper.py
+korean_news_scraper/scrollDownPage.py
+korean_news_scraper.egg-info/PKG-INFO
+korean_news_scraper.egg-info/SOURCES.txt
+korean_news_scraper.egg-info/dependency_links.txt
+korean_news_scraper.egg-info/top_level.txt

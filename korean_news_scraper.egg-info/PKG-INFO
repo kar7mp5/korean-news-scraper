@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: korean_news_scraper
+Version: 0.1.1
+Summary: A python package for web scraping korean news articles
+Home-page: https://github.com/kimminsum/korean-news-scraper.git
+Author: kar7mp5
+Author-email: kimminsum <tommy1005a@gmail.com>
+Project-URL: Homepage, https://github.com/kimminsum/korean-news-scraper
+Project-URL: Issues, https://github.com/kimminsum/korean-news-scraper/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Korean News Scraper
