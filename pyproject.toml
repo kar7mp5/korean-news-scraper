@@ -2,10 +2,10 @@
 name = "news_scraper"
 version = "0.0.1"
 authors = [
-  { name="kar7mp5", email="tommy1005a@gmail.com" },
+  { name="kimminsum", email="tommy1005a@gmail.com" },
 ]
 description = "A python package for web scraping news articles"
-readme = "README.md"
+readme = "ReadME.md"
 requires-python = ">=3.8"
 classifiers = [
     "Programming Language :: Python :: 3",
