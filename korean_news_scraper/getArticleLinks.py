@@ -1,3 +1,11 @@
+"""
+# getArticleLinks.py
+
+When storing a lot of data in the Python list data type, 
+there is a disadvantage of slowing down the speed, 
+but a separate data type can be introduced later.
+"""
+
 from bs4 import BeautifulSoup
 import requests
 import urllib

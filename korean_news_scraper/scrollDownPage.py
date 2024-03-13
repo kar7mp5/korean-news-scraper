@@ -1,3 +1,9 @@
+"""
+# scrollDownPage.py
+
+Beautifulsoup has the disadvantage of not being able to load all pages, 
+so I used Selenium to scroll to the end of the page.
+"""
 from selenium import webdriver
 
 
