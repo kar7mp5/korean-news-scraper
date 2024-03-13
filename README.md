@@ -8,7 +8,7 @@ After version 0.1.1. is possible to use. Please do not use it before.
 ## Build
 
 ```bash
-run setup.py
+$ run setup.py
 ```
 
 
