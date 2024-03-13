@@ -5,35 +5,36 @@
 
 from bs4 import BeautifulSoup
 import requests
+import pandas as pd
 import certifi
 import lxml
 
-import os, csv
+from tqdm import tqdm
+
+import os
 
 
-def extract_article_content(abs_path: str):
+def extract_article_content(relative_path: str):
     """Get article contents from link
 
-    :param abs_path: Get data from abs path
+    :param relative_path: Get data from abs path
     """
 
-    csv_files = os.listdir(f"{os.getcwd()}/{abs_path}")
+    csv_files = os.listdir(f"{os.getcwd()}/{relative_path}")
 
+    # read csv file
     for csv_file_name in csv_files:
-        with open(f"{os.getcwd()}/{abs_path}/{csv_file_name}", newline='') as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
-                print(row["News Links"])
-                tmp = row["News Links"]
-                get_article_text(tmp)
+        data = pd.read_csv(f"{os.getcwd()}/{relative_path}/{csv_file_name}")
 
+        for row in tqdm(data["News Links"], desc="Get article's text", ncols=100):
+            get_article_text(row)
 
 
 
 def get_article_text(url: str):
     """Get article text from link
 
-    :param abs_path: Get text from article's link
+    :param url: Get text from article's link
     """
 
     # exeption handling for website blocking
@@ -43,11 +44,7 @@ def get_article_text(url: str):
         element = soup.find("div")
         text_content = element.get_text()
 
-        print(''.join([n for n in text_content if not n in ['\n', '/', '\\']]))
+        # print(''.join([n for n in text_content if not n in ['\n', '/', '\\']]))
 
     except:
         pass
-
-
-if __name__=="__main__":
-    extract_article_content("data")

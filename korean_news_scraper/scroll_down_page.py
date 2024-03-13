@@ -13,8 +13,6 @@ def scroll_down_page(url: str) -> None:
     
     :param url: Website url
     """
-    
-    print("\033[34mScroll down the page\033[0m")
 
     try:
         options = webdriver.ChromeOptions()

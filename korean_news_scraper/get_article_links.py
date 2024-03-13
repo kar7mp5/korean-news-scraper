@@ -11,6 +11,8 @@ import requests
 import urllib
 import lxml
 
+from tqdm import tqdm
+
 from scroll_down_page import scroll_down_page
 
 
@@ -20,8 +22,6 @@ def get_article_links(lang: str, keyword: str) -> list[str]:
     :param lang: Select website language. You can use ['ko-KR', 'en-EN']
     :param keyword: Search keyword
     """
-
-    print("\n\033[34mExtract articles links\033[0m")
 
     # select language
     if lang == "ko-KR":
@@ -37,6 +37,8 @@ def get_article_links(lang: str, keyword: str) -> list[str]:
     re = requests.get(url)
     soup = BeautifulSoup(re.text, "lxml")
     news_tags = soup.find_all('a', class_="WwrzSb")
-    news_links = ["https://news.google.com/" + tag["href"][2:] for tag in news_tags]  # Links to articles
+
+    news_links = ["https://news.google.com/" + tag["href"][2:] for tag in tqdm(news_tags, desc="Get article's links", ncols=100)]  # Links to articles
+
 
     return news_links

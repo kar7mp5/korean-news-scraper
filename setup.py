@@ -8,5 +8,5 @@ setup(
     author_email='tommy1005a@gmail.com',
     description='A python package to scrape news.',
     packages=find_packages(),
-    install_requires=['requests', 'beautifulsoup4', 'selenium', 'pandas'],
+    install_requires=['requests', 'beautifulsoup4', 'selenium', 'pandas', 'tqdm'],
 )
