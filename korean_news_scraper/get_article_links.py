@@ -1,19 +1,24 @@
 """
-# getArticleLinks.py
+# get_article_links.py
 
 When storing a lot of data in the Python list data type, 
 there is a disadvantage of slowing down the speed, 
 but a separate data type can be introduced later.
 """
+
 from bs4 import BeautifulSoup
 import requests
 import urllib
 
-from scrollDownPage import scrollDownPage
+from scroll_down_page import scroll_down_page
 
 
-def getArticleLinks(lang: str, keyword: str) -> list[str]:
+def get_article_links(lang: str, keyword: str) -> list[str]:
+    """Get article's links
 
+    :param lang: Select website language. You can use ['ko-KR', 'en-EN']
+    :param keyword: Search keyword
+    """
     print("\nExtract articles links")
 
     # select language
@@ -24,7 +29,7 @@ def getArticleLinks(lang: str, keyword: str) -> list[str]:
     else:
         raise ValueError("Unsupported Language. Try to use 'ko-KR' or 'en-EN'")
 
-    scrollDownPage(url)
+    scroll_down_page(url)
 
     # get articles's url
     re = requests.get(url)

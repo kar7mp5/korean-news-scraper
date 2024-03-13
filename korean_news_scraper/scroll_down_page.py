@@ -1,14 +1,19 @@
 """
-# scrollDownPage.py
+# scroll_down_page.py
 
 Beautifulsoup has the disadvantage of not being able to load all pages, 
 so I used Selenium to scroll to the end of the page.
 """
+
 from selenium import webdriver
 
 
-def scrollDownPage(url: str) -> None:
-
+def scroll_down_page(url: str) -> None:
+    """Scroll to the end of the page
+    
+    :param url: Website url
+    """
+    
     print("Scroll down the page")
 
     try:

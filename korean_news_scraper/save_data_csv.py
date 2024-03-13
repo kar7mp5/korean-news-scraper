@@ -7,12 +7,20 @@ Links from Google News articles for specific keywords are scraped and saved to C
 import pandas as pd
 import os
 
-from getArticleLinks import getArticleLinks
+from get_article_links import get_article_links
 
 
-def googleNewsScraper(keywords: list, abs_path: str = "", show_data: bool = True, lang: str = "ko-KR") -> None:
+def save_data_csv(keywords: list, abs_path: str = "", show_data: bool = True, lang: str = "ko-KR") -> None:
+    """Get article's links
+
+    :param keywords: Keywords; data type is list[str]
+    :param abs_path: Data save abs path
+    :param show_data: Select to show the data
+    :param lang: Select website language. You can use ['ko-KR', 'en-EN']
+    """
+
     for keyword in keywords:
-        data = getArticleLinks(lang, keyword) 
+        data = get_article_links(lang, keyword)
 
         df = pd.DataFrame(data)
         
