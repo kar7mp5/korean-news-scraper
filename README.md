@@ -4,6 +4,9 @@ Hello World!  Korean News Scraper aims to be a Korean language data collection t
 
 After version 0.1.1. is possible to use. Please do not use it before.
 
+# Build
+run setup.py
+
 ## Required Libraries
 - beautifulsoup4
 - selenium
