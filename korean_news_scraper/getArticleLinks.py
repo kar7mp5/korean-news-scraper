@@ -5,7 +5,6 @@ When storing a lot of data in the Python list data type,
 there is a disadvantage of slowing down the speed, 
 but a separate data type can be introduced later.
 """
-
 from bs4 import BeautifulSoup
 import requests
 import urllib
@@ -15,7 +14,7 @@ from scrollDownPage import scrollDownPage
 
 def getArticleLinks(lang: str, keyword: str) -> list[str]:
 
-    print("Extract articles links")
+    print("\nExtract articles links")
 
     # select language
     if lang == "ko-KR":

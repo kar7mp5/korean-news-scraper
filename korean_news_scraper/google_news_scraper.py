@@ -10,7 +10,7 @@ import os
 from getArticleLinks import getArticleLinks
 
 
-def googleNewsScraper(keywords: list, lang: str = "ko-KR", abs_path: str = "", show_data: bool = True) -> None:
+def googleNewsScraper(keywords: list, abs_path: str = "", show_data: bool = True, lang: str = "ko-KR") -> None:
     for keyword in keywords:
         data = getArticleLinks(lang, keyword) 
 
@@ -21,13 +21,13 @@ def googleNewsScraper(keywords: list, lang: str = "ko-KR", abs_path: str = "", s
             print(df)
 
 
-        print(f"mk {keyword}.csv")
-        df.columns = ["News Links"]
+        print(f"\nScrapping {len(df)} data\nmk {keyword}.csv")
 
         # save the data as .csv 
+        df.columns = ["News Links"]
         try:
             df.to_csv(f"{os.getcwd()}/{abs_path}/{keyword}.csv")
         except:
-            print(f"mkdir {abs_path}")
+            print(f"\nmkdir {abs_path}")
             os.mkdir(f"{abs_path}")
             df.to_csv(f"{os.getcwd()}/{abs_path}/{keyword}.csv")
