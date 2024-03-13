@@ -1,17 +1,17 @@
 """
-# get_article_contents.py
+# extract_article_content.py
 
 """
 
 from bs4 import BeautifulSoup
 import requests
-import lxml
 import certifi
+import lxml
 
 import os, csv
 
 
-def get_article_contents(abs_path: str):
+def extract_article_content(abs_path: str):
     """Get article contents from link
 
     :param abs_path: Get data from abs path
@@ -50,4 +50,4 @@ def get_article_text(url: str):
 
 
 if __name__=="__main__":
-    get_article_contents("data")
+    extract_article_content("data")
