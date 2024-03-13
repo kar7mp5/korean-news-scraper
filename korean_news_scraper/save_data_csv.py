@@ -29,13 +29,13 @@ def save_data_csv(keywords: list, abs_path: str = "", show_data: bool = True, la
             print(df)
 
 
-        print(f"\nScrapping {len(df)} data\nmk {keyword}.csv")
+        print(f"\033[36m\nScrapping {len(df)} data\nmk {keyword}.csv\033[0m")
 
         # save the data as .csv 
         df.columns = ["News Links"]
         try:
             df.to_csv(f"{os.getcwd()}/{abs_path}/{keyword}.csv")
         except:
-            print(f"\nmkdir {abs_path}")
+            print(f"\033[31m\nmkdir {abs_path}\033[0m")
             os.mkdir(f"{abs_path}")
             df.to_csv(f"{os.getcwd()}/{abs_path}/{keyword}.csv")

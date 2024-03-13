@@ -9,6 +9,7 @@ but a separate data type can be introduced later.
 from bs4 import BeautifulSoup
 import requests
 import urllib
+import lxml
 
 from scroll_down_page import scroll_down_page
 
@@ -19,7 +20,8 @@ def get_article_links(lang: str, keyword: str) -> list[str]:
     :param lang: Select website language. You can use ['ko-KR', 'en-EN']
     :param keyword: Search keyword
     """
-    print("\nExtract articles links")
+
+    print("\n\033[34mExtract articles links\033[0m")
 
     # select language
     if lang == "ko-KR":
@@ -27,13 +29,13 @@ def get_article_links(lang: str, keyword: str) -> list[str]:
     elif lang == "en-EN":
         url = f"https://news.google.com/search?q={urllib.parse.quote(keyword)}&hl=en-US&gl=US&ceid=US:en"
     else:
-        raise ValueError("Unsupported Language. Try to use 'ko-KR' or 'en-EN'")
+        raise ValueError("\033[31mUnsupported Language. Try to use 'ko-KR' or 'en-EN'\033[0m")
 
     scroll_down_page(url)
 
     # get articles's url
     re = requests.get(url)
-    soup = BeautifulSoup(re.text, "html.parser")
+    soup = BeautifulSoup(re.text, "lxml")
     news_tags = soup.find_all('a', class_="WwrzSb")
     news_links = ["https://news.google.com/" + tag["href"][2:] for tag in news_tags]  # Links to articles
 

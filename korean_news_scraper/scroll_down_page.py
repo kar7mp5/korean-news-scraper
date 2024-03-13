@@ -14,7 +14,7 @@ def scroll_down_page(url: str) -> None:
     :param url: Website url
     """
     
-    print("Scroll down the page")
+    print("\033[34mScroll down the page\033[0m")
 
     try:
         options = webdriver.ChromeOptions()
@@ -23,7 +23,7 @@ def scroll_down_page(url: str) -> None:
         driver = webdriver.Chrome(options=options)
         driver.get(url)
     except:
-        raise ValueError("Invaild URL")
+        raise ValueError("\033[31mInvaild URL\033[0m")
 
 
     #This code will scroll down to the ends
