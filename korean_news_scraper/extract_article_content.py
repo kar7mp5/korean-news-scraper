@@ -1,6 +1,7 @@
 """
 # extract_article_content.py
 
+Extract article's contents
 """
 
 from bs4 import BeautifulSoup
@@ -8,10 +9,11 @@ import requests
 import pandas as pd
 import certifi
 import lxml
+import os
 
 from tqdm import tqdm
 
-import os
+
 
 
 def extract_article_content(relative_path: str):
@@ -26,15 +28,19 @@ def extract_article_content(relative_path: str):
     for csv_file_name in csv_files:
         data = pd.read_csv(f"{os.getcwd()}/{relative_path}/{csv_file_name}")
 
-        for row in tqdm(data["News Links"], desc="Get article's text", ncols=100):
-            get_article_text(row)
+        for index, row in enumerate(tqdm(data["News Links"], desc="Get article's text", ncols=100)):
+            save_article_content(row, relative_path, csv_file_name, index)
 
 
 
-def get_article_text(url: str):
+
+def save_article_content(url: str, relative_path: str, file_name: str, index: int):
     """Get article text from link
 
     :param url: Get text from article's link
+    :param relative_path: Relative Path
+    :param file_name: File Name
+    :param index: Index Number
     """
 
     # exeption handling for website blocking
@@ -43,6 +49,7 @@ def get_article_text(url: str):
         soup = BeautifulSoup(re.content, "lxml")
         element = soup.find("div")
         text_content = element.get_text()
+        pd.DataFrame(text_content.split('.')).to_csv(f"{os.getcwd()}/{relative_path}/{file_name[:-4]}_{index}.csv", encoding="utf-8")
 
         # print(''.join([n for n in text_content if not n in ['\n', '/', '\\']]))
 
