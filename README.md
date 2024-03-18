@@ -25,7 +25,7 @@ $ python3 setup.py
 ```python
 import korean_news_scraper
 
-keywords = ["미국", "대통령", "대선"]
-korean_news_scraper.save_data_csv(keywords, "data", False)
-korean_news_scraper.get_article_contents("data")
+keywords = ["news", "happy", "environment"]
+korean_news_scraper.save_article_links(keywords, "data", lang="en-EN")
+korean_news_scraper.extract_article_content("data")
 ```

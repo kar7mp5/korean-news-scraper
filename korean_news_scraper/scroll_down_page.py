@@ -4,13 +4,15 @@
 Beautifulsoup has the disadvantage of not being able to load all pages, 
 so I used Selenium to scroll to the end of the page.
 """
-
+# Library for 
 from selenium import webdriver
+
+
 
 
 def scroll_down_page(url: str) -> None:
     """Scroll to the end of the page
-    
+
     :param url: Website url
     """
 
